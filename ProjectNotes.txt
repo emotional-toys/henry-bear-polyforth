@@ -3,4 +3,5 @@ Henry-toys evolutions
 
 08.04.2026
     1329: Here is the centralized repo for work on the next-gen henry bear using a Volatco.
+    1330: Next step is to reproduce the collaborative session so that VOL06 can be proofed.
     
