@@ -2,6 +2,8 @@
 
 We are stuck with VOL06 in thinking that external GPIO pins are the answer when direct connection via J8-J13 suffices.
 
+For the IDE, use this [repo](https://github.com/volatco/saneForth).
+
 ### Task definition
 
 Walk through the code and see if you can operate eyes and mouth by hand over IDE.
