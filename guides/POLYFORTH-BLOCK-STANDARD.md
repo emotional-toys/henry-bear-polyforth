@@ -55,18 +55,18 @@ Use line `0` as a short title comment.
 Examples from the `IDEAL` style:
 
 ```forth
-( IDEAL Simplified )
-( Static, abstract things )
-( Benefit of Experience )
-( Stream of Intelligence )
+( IDEAL Simplified)
+( Static, abstract things)
+( Benefit of Experience)
+( Stream of Intelligence)
 ```
 
 For Henry-style work:
 
 ```forth
-( Henry Face Basics )
-( Henry Face Wiring )
-( Henry Face Actions )
+( Henry Face Basics)
+( Henry Face Wiring)
+( Henry Face Actions)
 ```
 
 Keep the title short.
@@ -101,7 +101,7 @@ If supported by the environment, prefer `THRU`.
 Example style:
 
 ```forth
-( Henry Face Load Block )
+( Henry Face Load Block)
 4801 4806 THRU
 ```
 
@@ -115,7 +115,7 @@ In this repo, source words should be uppercase.
 Preferred:
 
 ```forth
-: FACE-OFF ( -- ) 0 FACE-BUS! ;
+: FACE-OFF ( --) 0 FACE-BUS! ;
 ```
 
 ## 6. Keep comments sparse and structural
@@ -134,8 +134,8 @@ exists specifically for explanation.
 Preferred:
 
 ```forth
-( Henry Face Actions )
-: BLINK ( N -- ) CLAMP0 0 ?DO BLINK-ONCE LOOP ;
+( Henry Face Actions)
+: BLINK ( N --) CLAMP0 0 ?DO BLINK-ONCE LOOP ;
 ```
 
 Avoid large narrative headers in the source itself.
@@ -147,9 +147,9 @@ This is standard Brodie-style practice and matches the `IDEAL` sample.
 Examples:
 
 ```forth
-: PREDICT ( EXP -- RES ) ...
-: OTHEREXP ( CUR -- NEW ) ...
-: FACE-SET-BIT ( N -- ) ...
+: PREDICT ( EXP -- RES) ...
+: OTHEREXP ( CUR -- NEW) ...
+: FACE-SET-BIT ( N --) ...
 ```
 
 Rules:
@@ -192,14 +192,45 @@ Do the same:
 Example:
 
 ```forth
-: MOUTH-CLOSE ( -- )
+: MOUTH-CLOSE ( --)
   MOUTH-CLOSE-DRIVE
   MOUTH-RATE-MS @ MS-WAIT
   FACE-DRIVE-IDLE
 ;
 ```
 
-## 10. Keep block text dense, but not cryptic
+## 10. Capture the `LIST` view as a document
+
+For training and review, do not stop at the `.src` file.
+
+Also generate a plain-text `LIST` document that shows the block source
+exactly as a block system presents it.
+
+Recommended companion artifacts:
+
+- block source: `name-4800.src`
+- list capture: `NAME-LIST-BLOCKS.txt`
+
+Required structure of the list capture:
+
+1. optional block index
+2. one `480x LIST` section per block
+3. lines numbered `0..15`
+4. exact visible block text
+
+Example:
+
+```text
+4800 LIST
+0 ( Henry Face Load Block)
+1 4801 4808 THRU
+2
+...
+15
+```
+
+This step is part of the standard transformation, not an optional extra.
+## 11. Keep block text dense, but not cryptic
 
 Professional FORTH is compact. That does not mean careless.
 
@@ -282,8 +313,10 @@ An agent generating block-oriented source for this repo should:
 4. place the block title on line 0
 5. prefer `THRU` for load blocks when available
 6. use uppercase names
-7. add stack comments only where they carry information
-8. avoid prose-heavy comments in the source blocks
+7. omit the space before `)` in parenthetical comments
+8. add stack comments only where they carry information
+9. avoid prose-heavy comments in the source blocks
+10. generate the `LIST` capture as part of the final output
 
 ## Standard versus working source
 
@@ -291,6 +324,7 @@ Use two layers if needed:
 
 - a free-form working file such as `.fth`
 - a canonical block file such as `.src`
+- a plain-text `LIST` capture such as `*-LIST-BLOCKS.txt`
 
 The block file is the publishable source of record for old-school
 polyFORTH workflows.
@@ -304,9 +338,11 @@ Before treating a block file as conformant, verify:
 - block numbers are correct
 - block `0` is a load block
 - block titles exist
+- parenthetical comments omit the space before `)`
 - source is factored by responsibility
 - stack comments are present where needed
 - comments are sparse and structural
+- a corresponding `LIST` document exists
 
 ## Reference pattern from IDEAL
 

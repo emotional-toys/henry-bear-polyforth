@@ -23,6 +23,10 @@ They should translate:
 
 into small FORTH words organized by block.
 
+The same transformation approach also applies to other structured
+languages such as C, C++, Java, Python, or pseudo-code. C# is the main
+example surface because it matches the Henry motor prototype.
+
 ## Core rule
 
 Translate intent, not syntax.
@@ -174,7 +178,7 @@ private static void FaceOff()
 FORTH:
 
 ```forth
-: FACE-OFF ( -- ) 0 FACE-BUS! ;
+: FACE-OFF ( --) 0 FACE-BUS! ;
 ```
 
 ### C# conditional
@@ -189,7 +193,7 @@ if (useSoftwarePwm)
 FORTH:
 
 ```forth
-: EYES-PWM-ON ( -- )
+: EYES-PWM-ON ( --)
   USE-SOFTWARE-PWM 0< IF EXIT THEN
   EYES-PWM-BIT FACE-SET-BIT
 ;
@@ -207,7 +211,7 @@ for (var i = 0; i < cycles; i++)
 FORTH:
 
 ```forth
-: MOUTH ( N -- ) CLAMP0 0 ?DO MOUTH-ONCE LOOP ;
+: MOUTH ( N --) CLAMP0 0 ?DO MOUTH-ONCE LOOP ;
 ```
 
 ## Translation workflow for agents
@@ -240,10 +244,41 @@ Fit the layers into numbered blocks.
 
 Every nontrivial word should start from its stack contract.
 
-### Step 5: compress only after correctness
+### Step 5: build the block source
+
+Construct the canonical `.src` file directly in `16 x 64` form:
+
+- one load block
+- one title on line `0` of each block
+- exact `16` lines per block
+- exact `64` columns or fewer per line
+
+### Step 6: compress only after correctness
 
 First make the factoring right.
 Then tighten the layout to fit `16 x 64` block format.
+
+### Step 7: generate the `LIST` document
+
+After the `.src` file is correct, generate the companion plain-text
+document that captures the block listing exactly as the system would
+show it.
+
+Required outputs for a complete transform:
+
+1. working `.fth` source
+2. canonical `.src` block source
+3. `LIST`-style text document
+
+Example final form:
+
+```text
+4805 LIST
+0 ( Henry Face Drive)
+1 : EYES-COAST ( --) EYES-IN1-LOW EYES-IN2-LOW EYES-PWM-OFF ;
+...
+15
+```
 
 ## What not to do
 
@@ -291,14 +326,14 @@ C# intent:
 FORTH translation:
 
 ```forth
-: BLINK-ONCE ( -- )
+: BLINK-ONCE ( --)
   EYES-CLOSE
   BLINK-DELAY-MS @ MS-WAIT
   EYES-OPEN
   BLINK-DELAY-MS @ MS-WAIT
 ;
 
-: BLINK ( N -- ) CLAMP0 0 ?DO BLINK-ONCE LOOP ;
+: BLINK ( N --) CLAMP0 0 ?DO BLINK-ONCE LOOP ;
 ```
 
 That is a proper semantic translation, not a token-for-token port.
@@ -313,14 +348,17 @@ When translating C# to polyFORTH here, the agent should:
 4. keep hardware uncertainty localized
 5. produce block-oriented source that follows the local standard
 6. verify 64-column lines in block source
+7. use Brodie-style comment spacing with no space before `)`
+8. generate the final `LIST` document
 
 ## Output expectation
 
-For serious work, the agent should ideally produce:
+For serious work, the agent should produce:
 
 1. a readable working `.fth` file
 2. a canonical `.src` block file
-3. short notes on unresolved hardware assumptions
+3. a `LIST` capture document
+4. short notes on unresolved hardware assumptions
 
 That matches the repo’s actual needs better than a single mixed-format
 artifact.

@@ -17,7 +17,7 @@ Use this guide when an agent needs to:
 ## Repo-specific assumptions
 
 - Word names should be uppercase in this repo.
-- Comments in FORTH code should use Brodie-style parenthetical comments: `( ... )`.
+- Comments in FORTH code should use Brodie-style parenthetical comments: `( ... )` with no space before `)`.
 - Hardware-facing code should isolate unknown wiring in a small set of constants or words.
 - For Volatco work, prefer simple interactive words that can be tested from the terminal.
 - Do not infer exact hardware mappings unless the repository or measurement notes confirm them.
@@ -230,8 +230,29 @@ Example:
 For ordinary source comments, prefer parenthetical comments as taught in *Starting FORTH*:
 
 ```forth
-( BUS SHADOW SO WE CAN SET AND CLEAR INDIVIDUAL CONTROL BITS. )
+( BUS SHADOW SO WE CAN SET AND CLEAR INDIVIDUAL CONTROL BITS.)
 ```
+
+### 5. Produce the final training artifacts
+
+For block-oriented work in this repo, the complete output is usually:
+
+1. a working source file such as `.fth`
+2. a canonical block source file such as `.src`
+3. a `LIST`-style text capture for training and review
+
+The `LIST` capture should mirror the system display format:
+
+```text
+4800 LIST
+0 ( Henry Face Load Block)
+1 4801 4808 THRU
+...
+15
+```
+
+This makes the final result agent-readable even when the original
+consumer is a block-based IDE or terminal.
 
 ### 5. Prefer terminal-testable words
 

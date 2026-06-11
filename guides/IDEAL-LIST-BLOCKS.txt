@@ -1,0 +1,115 @@
+BLOCK INDEX
+4821 ( IDEAL Simplified)   EMPTY
+4822 ( Static, abstract things)
+4823 ( Simple Interactions)
+4824 ( Existence Simplified)
+4825 ( Benefit of Experience)
+4826 ( Stream of Intelligence)
+
+4821 LIST
+0 ( IDEAL Simplified) EMPTY
+1
+2 ( Database) 1 FH 2 FH THRU ( Exist) 3 FH 5 FH THRU
+3
+4 2 BOREDOMLEVEL !
+5 : .EXP "EXP TYPE ; : .RES "RES TYPE ;
+6 : .INT ( i) INTS U@ 256 /MOD SWAP .EXP ." ->" .RES SPACE ;
+7 : .MOOD ( i) "MOOD TYPE ;
+8
+9 : RUN E1 PREVEXP ! 20 0 DO STEP CR I . ." : "
+10     CURINT @ DUP . .INT #SATIS ?
+11     EXPECTED @ .RES SPACE MOOD @ .MOOD LOOP ;
+12
+13
+14
+15
+
+4822 LIST
+0 ( Static, abstract things)
+1 : :ID ( a lim _id - i) OVER @ = ABORT" Too many!"
+2 DUP @ DUP CONSTANT SWAP TALLY ;
+3 : !SARRAY ( i a _ - i) SWAP 4* + HERE SWAP ! 32 STRING ;
+4
+5 10 CONSTANT MEXP 10 CONSTANT MRES 6 CONSTANT MMOOD
+6 VARIABLE #EXP        VARIABLE #RES     VARIABLE #MOOD
+7 MEXP SARRAY "EXP MRES SARRAY "RES MMOOD SARRAY "MOOD
+8
+9 : :EXP ( _id _dsp - i) #EXP MEXP :ID DUP [’] "EXP !SARRAY ;
+10 : :RES ( same) #RES MRES :ID DUP [’] "RES !SARRAY ;
+11 : :MOOD ( sam) #MOOD MMOOD :ID DUP [’] "MOOD !SARRAY ;
+12
+13 :EXP E0 Null DROP :RES R0 Null DROP :MOOD MNOTH Nothing DROP
+14
+15
+
+4823 LIST
+0 ( Simple Interactions)
+1 MEXP DUP * CONSTANT MINT VARIABLE #INT 1 #INT !
+2 MINT HARRAY INTS
+3
+4 : ?E-R ( nE-R - iI | nE-R 0) #INT @ 1- FOR
+5       DUP I INTS U@ = IF DROP R> EXIT THEN NEXT 0 ;
+6 : ?INT ( iE iR - iI | nE-R 0) >< + ?E-R ;
+7 : +INT ( iE iR - iI) ?INT ?DUP 0= IF
+8     #INT @ DUP MINT = ABORT" Too many prim interactions!"
+9     SWAP OVER INTS H! #INT TALLY THEN ;
+10
+11
+12
+13
+14
+15
+
+4824 LIST
+0 ( Existence Simplified)
+1 :EXP E1 E1 DROP :RES R1 R1 DROP
+2 :EXP E2 E2 DROP :RES R2 R2 DROP
+3
+4 :MOOD SATIS SelfSatisfied DROP :MOOD FRUST Frustrated DROP
+5 :MOOD BORED Bored DROP            :MOOD PAIN Pained DROP
+6 :MOOD PLEAS Pleased DROP
+7
+8 ( State variables)
+9 VARIABLE PREVEXP VARIABLE CUREXP
+10 VARIABLE MOOD      VARIABLE #SATIS VARIABLE BOREDOMLEVEL
+11
+12 VARIABLE EXPECTED VARIABLE RESULT VARIABLE CURINT
+13
+14
+15
+
+4825 LIST
+0 ( Benefit of Experience)
+1 : PREDICT ( exp - res) #INT @ 1- FOR DUP I INTS C@ = IF
+2       DROP R> INTS 1+ C@ EXIT THEN NEXT DROP 0 ;
+3
+4 : ENACT ( - res) CUREXP @ E1 = IF R1 ELSE R2 THEN ;
+5
+6 : OTHEREXP ( cur - new) #EXP @ 1 DO DUP I - IF
+7     DROP 2R> NIP EXIT THEN LOOP DROP 0 ;
+8
+9 EXIT
+10 : OTHEREXP ( cur - new) #EXP @ 1- FOR DUP I - IF
+11      DROP R> EXIT THEN NEXT ( Never completes here) ;
+12
+13
+14
+15
+
+4826 LIST
+0 ( Stream of Intelligence)
+1 : STEP PREVEXP @ MOOD @ BORED = IF OTHEREXP 0 #SATIS !
+2     THEN DUP CUREXP ! DUP PREDICT EXPECTED !
+3       ENACT DUP RESULT ! +INT CURINT !
+4 RESULT @ EXPECTED @ - IF FRUST MOOD ! 0 #SATIS !
+5     ELSE SATIS MOOD ! #SATIS TALLY THEN
+6 #SATIS @ BOREDOMLEVEL @ < NOT IF BORED MOOD ! THEN
+7 CUREXP @ PREVEXP ! ;
+8
+9
+10
+11
+12
+13
+14
+15
