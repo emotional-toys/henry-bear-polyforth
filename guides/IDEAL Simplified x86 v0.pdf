@@ -1,0 +1,468 @@
+%PDF-1.3
+%µµµµ
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Bold >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-Oblique >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier-BoldOblique >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 5 0 R /Resources << /Font << /F0 1 0 R /F1 2 0 R /F2 3 0 R /F3 4 0 R >> >> /MediaBox [ 0 0 612 792 ] /Contents 7 0 R >> 
+endobj
+7 0 obj
+<< /Length 8 0 R >>
+stream
+BT
+0 0 Td 
+/F0 12 Tf 100 Tz 18 748.836 Td
+(      4821 \( IDEAL Simplified\)   EMPTY) Tj 
+0 -12 Td
+(      4822   \( Static, abstract things\)) Tj 
+0 -12 Td
+(      4823   \( Simple Interactions\)) Tj 
+0 -12 Td
+(      4824 \( Existence Simplified\)) Tj 
+0 -12 Td
+(      4825   \( Benefit of Experience\)) Tj 
+0 -12 Td
+(      4826   \( Stream of Intelligence\)) Tj 
+0 -24 Td
+(   arrayForth-3   5/05/25  17:37:52   sF386/NT aF-3d+GLOW  FULL In-house) Tj 
+ET
+endstream
+endobj
+8 0 obj
+468 
+endobj
+9 0 obj
+<< /Type /Page /Parent 5 0 R /Resources << /Font << /F0 1 0 R /F1 2 0 R /F2 3 0 R /F3 4 0 R >> >> /MediaBox [ 0 0 612 792 ] /Contents 10 0 R >> 
+endobj
+10 0 obj
+<< /Length 11 0 R >>
+stream
+BT
+0 0 Td 
+/F0 12 Tf 53 Tz 18 760.836 Td
+(        ) Tj 
+0 -12 Td
+(                                                                       ) Tj 
+/F1 12 Tf 100 Tz 275.977 0 Td
+(4821 LIST) Tj 
+/F0 12 Tf 53 Tz -275.977 -12 Td
+(        ) Tj 
+0 -12 Td
+(        This is the "minimalist" version for x86, with no "hooks" for      0 \( IDEAL Simplified\)   EMPTY) Tj 
+0 -12 Td
+(          future \(unknown\) complications.  Will make conventions that      1 ) Tj 
+0 -12 Td
+(          should survive into more complex versions, but this one will     2 \( Database\)  1 FH 2 FH THRU  \( Exist\)  3 FH 5 FH THRU) Tj 
+0 -12 Td
+(          be a "floor" especially in its native chip version.              3 ) Tj 
+0 -12 Td
+(                                                                           4 2 BOREDOMLEVEL !) Tj 
+0 -12 Td
+(        Each sort of "thing" will have a numeric handle starting at 1.     5 : .EXP  "EXP TYPE ;   : .RES  "RES TYPE ;) Tj 
+0 -12 Td
+(          The zero handle will mean "null" or undefined.                   6 : .INT \( i\)  INTS U@ 256 /MOD  SWAP .EXP ." ->" .RES SPACE ;) Tj 
+0 -12 Td
+(                                                                           7 : .MOOD \( i\)  "MOOD TYPE ;) Tj 
+0 -12 Td
+(        BOREDOMLEVEL is bias between self-satisfaction & disengagement.    8 ) Tj 
+0 -12 Td
+(                                                                           9 : RUN   E1 PREVEXP !  20 0 DO  STEP  CR I . ." : ") Tj 
+0 -12 Td
+(                                                                          10     CURINT @ DUP . .INT  #SATIS ?) Tj 
+0 -12 Td
+(                                                                          11     EXPECTED @ .RES  SPACE MOOD @ .MOOD  LOOP ;) Tj 
+0 -12 Td
+(                                                                          12 ) Tj 
+0 -12 Td
+(                                                                          13 ) Tj 
+0 -12 Td
+(                                                                          14 ) Tj 
+0 -12 Td
+(                                                                          15 ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(                                                                       ) Tj 
+/F1 12 Tf 100 Tz 275.977 0 Td
+(4822 LIST) Tj 
+/F0 12 Tf 53 Tz -275.977 -12 Td
+(        ) Tj 
+0 -12 Td
+(        Experiences, Results, moods are simple, named abstract things.     0   \( Static, abstract things\)) Tj 
+0 -12 Td
+(          They correspond to processes or events in the Existence          1 : :ID \( a lim _id - i\)  OVER @ = ABORT" Too many!") Tj 
+0 -12 Td
+(          du jour, as well as to additional pertinent attributes.          2   DUP @  DUP CONSTANT  SWAP TALLY ;) Tj 
+0 -12 Td
+(          The number and attributes of these are small and Existence-      3 : !SARRAY \( i a _ - i\)  SWAP 4* +  HERE SWAP !  32 STRING ;) Tj 
+0 -12 Td
+(          dependent, so we denote them internally with small ordinals      4 ) Tj 
+0 -12 Td
+(          and define only the "null" value \(0\) here.                       5 10 CONSTANT MEXP  10 CONSTANT MRES    6 CONSTANT MMOOD) Tj 
+0 -12 Td
+(        Attributes such as names apply to compile-time and to running on   6    VARIABLE #EXP     VARIABLE #RES      VARIABLE #MOOD) Tj 
+0 -12 Td
+(          "big" computers.                                                 7 MEXP SARRAY "EXP  MRES SARRAY "RES  MMOOD SARRAY "MOOD) Tj 
+0 -12 Td
+(                                                                           8 ) Tj 
+0 -12 Td
+(        M prefix is maximum.  # prefix is number of.  " is display name.   9 : :EXP \( _id _dsp - i\)  #EXP  MEXP :ID  DUP ['] "EXP !SARRAY ;) Tj 
+0 -12 Td
+(        :ID  adds an abstract thing and gives it a programmatic name.     10 : :RES \( same\)  #RES  MRES :ID  DUP ['] "RES !SARRAY ;) Tj 
+0 -12 Td
+(        !SARRAY  sets display name for the given ordinal and its class.   11 : :MOOD \( sam\)  #MOOD  MMOOD :ID  DUP ['] "MOOD !SARRAY ;) Tj 
+0 -12 Td
+(                                                                          12 ) Tj 
+0 -12 Td
+(                                                                          13 :EXP E0 Null DROP  :RES R0 Null DROP  :MOOD MNOTH Nothing DROP) Tj 
+0 -12 Td
+(                                                                          14 ) Tj 
+0 -12 Td
+(                                                                          15 ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(                                                                       ) Tj 
+/F1 12 Tf 100 Tz 275.977 0 Td
+(4823 LIST) Tj 
+/F0 12 Tf 53 Tz -275.977 -12 Td
+(        ) Tj 
+0 -12 Td
+(        Simple interactions are indexed by an experiment and a result,     0   \( Simple Interactions\)) Tj 
+0 -12 Td
+(          unique in that combination.  All are created dynamically by      1 MEXP DUP * CONSTANT MINT  VARIABLE #INT  1 #INT !) Tj 
+0 -12 Td
+(          the environment.  Changes in algorithm may add attributes or     2 MINT HARRAY INTS) Tj 
+0 -12 Td
+(          change storage or indexing methods.  Handle is ordinal, which    3 ) Tj 
+0 -12 Td
+(          simply denotes order of creation.  Ordinal 0 is null.            4 : ?E-R \( nE-R - iI | nE-R 0\)  #INT @  1- FOR) Tj 
+0 -12 Td
+(                                                                           5       DUP I INTS U@ = IF  DROP R> EXIT  THEN NEXT  0 ;) Tj 
+0 -12 Td
+(        INTS  is index; index values res|exp bytes in a halfcell.          6 : ?INT \( iE iR - iI | nE-R 0\)  >< + ?E-R ;) Tj 
+0 -12 Td
+(        ?E-R  returns nonzero ordinal if the index value exists, index     7 : +INT \( iE iR - iI\)  ?INT  ?DUP 0= IF) Tj 
+0 -12 Td
+(          value under false if not.                                        8     #INT @ DUP MINT = ABORT" Too many prim interactions!") Tj 
+0 -12 Td
+(        ?INT  same but takes experiment & result ordinals.                 9     SWAP OVER INTS H!  #INT TALLY  THEN ;) Tj 
+0 -12 Td
+(        : +INT  finds existing or creates new interaction.                10 ) Tj 
+0 -12 Td
+(                                                                          11 ) Tj 
+0 -12 Td
+(                                                                          12 ) Tj 
+0 -12 Td
+(                                                                          13 ) Tj 
+0 -12 Td
+(                                                                          14 ) Tj 
+0 -12 Td
+(                                                                          15 ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(        ) Tj 
+/F1 12 Tf 100 Tz 31.096 0 Td
+(   arrayForth-3   5/05/25  17:37:52   sF386/NT aF-3d+GLOW  FULL In-house) Tj 
+ET
+endstream
+endobj
+11 0 obj
+6793 
+endobj
+12 0 obj
+<< /Type /Page /Parent 5 0 R /Resources << /Font << /F0 1 0 R /F1 2 0 R /F2 3 0 R /F3 4 0 R >> >> /MediaBox [ 0 0 612 792 ] /Contents 13 0 R >> 
+endobj
+13 0 obj
+<< /Length 14 0 R >>
+stream
+BT
+0 0 Td 
+/F0 12 Tf 53 Tz 18 760.836 Td
+(        ) Tj 
+0 -12 Td
+(                                                                       ) Tj 
+/F1 12 Tf 100 Tz 275.977 0 Td
+(4824 LIST) Tj 
+/F0 12 Tf 53 Tz -275.977 -12 Td
+(        ) Tj 
+0 -12 Td
+(        Static abstract things are declared at compilation time.           0 \( Existence Simplified\)) Tj 
+0 -12 Td
+(                                                                           1 :EXP E1 E1 DROP  :RES R1 R1 DROP) Tj 
+0 -12 Td
+(        PREVEXP  is index of experiment made just before the current.      2 :EXP E2 E2 DROP  :RES R2 R2 DROP) Tj 
+0 -12 Td
+(        CUREXP  is index of experiment being made by current cycle.        3 ) Tj 
+0 -12 Td
+(                                                                           4 :MOOD SATIS SelfSatisfied DROP    :MOOD FRUST Frustrated DROP) Tj 
+0 -12 Td
+(        MOOD  is an abstract state influencing decision making.            5 :MOOD BORED Bored DROP            :MOOD PAIN  Pained DROP) Tj 
+0 -12 Td
+(        #SATIS  is self-satisfaction counter                               6 :MOOD PLEAS Pleased DROP) Tj 
+0 -12 Td
+(        BOREDOMLEVEL  is bias between self-satisfaction & disengagement.   7 ) Tj 
+0 -12 Td
+(                                                                           8 \( State variables\)) Tj 
+0 -12 Td
+(        EXPECTED  result from current experiment \(may be null\)             9 VARIABLE PREVEXP   VARIABLE CUREXP) Tj 
+0 -12 Td
+(        RESULT  actual result from current experiment                     10 VARIABLE MOOD      VARIABLE #SATIS   VARIABLE BOREDOMLEVEL) Tj 
+0 -12 Td
+(        CURINT  interaction for current experiment                        11 ) Tj 
+0 -12 Td
+(                                                                          12 VARIABLE EXPECTED  VARIABLE RESULT  VARIABLE CURINT) Tj 
+0 -12 Td
+(                                                                          13 ) Tj 
+0 -12 Td
+(                                                                          14 ) Tj 
+0 -12 Td
+(                                                                          15 ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(                                                                       ) Tj 
+/F1 12 Tf 100 Tz 275.977 0 Td
+(4825 LIST) Tj 
+/F0 12 Tf 53 Tz -275.977 -12 Td
+(        ) Tj 
+0 -12 Td
+(        PREDICT  finds the newest interaction employing the given          0   \( Benefit of Experience\)) Tj 
+0 -12 Td
+(          experiment \(highest ordinal\) returning handle for its result.    1 : PREDICT \( exp - res\)  #INT @ 1- FOR  DUP I INTS C@ = IF) Tj 
+0 -12 Td
+(          If no such interaction exists, returns null result.  Because     2       DROP R> INTS 1+ C@  EXIT  THEN NEXT  DROP 0 ;) Tj 
+0 -12 Td
+(          the result of each experiment is always the same, this is for    3 ) Tj 
+0 -12 Td
+(          appearances only.                                                4 : ENACT \( - res\)  CUREXP @ E1 = IF R1  ELSE R2  THEN ;) Tj 
+0 -12 Td
+(                                                                           5 ) Tj 
+0 -12 Td
+(        ENACT  performs experiment CUREXP.  E1->R1, E2->R2.                6 : OTHEREXP \( cur - new\)  #EXP @ 1 DO  DUP I - IF) Tj 
+0 -12 Td
+(                                                                           7     DROP 2R> NIP  EXIT  THEN LOOP  DROP 0 ;) Tj 
+0 -12 Td
+(        OTHEREXP  finds the experiment with *highest* ordinal differing    8 ) Tj 
+0 -12 Td
+(          from the one given.  The prototype given returned the *LOWEST*   9 EXIT) Tj 
+0 -12 Td
+(          ordinal, but no obvious reason why this would be preferable to  10 : OTHEREXP \( cur - new\)  #EXP @ 1- FOR  DUP I - IF) Tj 
+0 -12 Td
+(          the highest.  Second version uses highest instead because that  11     DROP  R> EXIT  THEN NEXT  \( Never completes here\) ;) Tj 
+0 -12 Td
+(          covers the case of defaulting to null when there's no other     12 ) Tj 
+0 -12 Td
+(          experiment than the one being enacted.                          13 ) Tj 
+0 -12 Td
+(                                                                          14 ) Tj 
+0 -12 Td
+(                                                                          15 ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(                                                                       ) Tj 
+/F1 12 Tf 100 Tz 275.977 0 Td
+(4826 LIST) Tj 
+/F0 12 Tf 53 Tz -275.977 -12 Td
+(        ) Tj 
+0 -12 Td
+(        STEP  performs one step/epoch of a "stream of intelligence".       0   \( Stream of Intelligence\)) Tj 
+0 -12 Td
+(          This one is not very bright at all.                              1 : STEP  PREVEXP @  MOOD @ BORED = IF OTHEREXP  0 #SATIS !) Tj 
+0 -12 Td
+(                                                                           2     THEN DUP CUREXP !  DUP PREDICT EXPECTED !) Tj 
+0 -12 Td
+(                                                                           3       ENACT DUP RESULT !  +INT CURINT !) Tj 
+0 -12 Td
+(                                                                           4   RESULT @ EXPECTED @ - IF  FRUST MOOD !  0 #SATIS !) Tj 
+0 -12 Td
+(                                                                           5     ELSE  SATIS MOOD !  #SATIS TALLY  THEN) Tj 
+0 -12 Td
+(                                                                           6   #SATIS @ BOREDOMLEVEL @ < NOT IF  BORED MOOD !  THEN) Tj 
+0 -12 Td
+(                                                                           7   CUREXP @ PREVEXP ! ;) Tj 
+0 -12 Td
+(                                                                           8 ) Tj 
+0 -12 Td
+(                                                                           9 ) Tj 
+0 -12 Td
+(                                                                          10 ) Tj 
+0 -12 Td
+(                                                                          11 ) Tj 
+0 -12 Td
+(                                                                          12 ) Tj 
+0 -12 Td
+(                                                                          13 ) Tj 
+0 -12 Td
+(                                                                          14 ) Tj 
+0 -12 Td
+(                                                                          15 ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(        ) Tj 
+0 -12 Td
+(        ) Tj 
+/F1 12 Tf 100 Tz 31.096 0 Td
+(   arrayForth-3   5/05/25  17:37:52   sF386/NT aF-3d+GLOW  FULL In-house) Tj 
+ET
+endstream
+endobj
+14 0 obj
+6610 
+endobj
+5 0 obj
+<< /Type /Pages /Kids [ 6 0 R 9 0 R 12 0 R ]
+/Count 3 >>
+endobj
+15 0 obj
+<< /Type /Catalog /Pages 5 0 R >>
+endobj
+xref
+0 16
+0000000000 65535 f
+0000000017 00000 n
+0000000088 00000 n
+0000000164 00000 n
+0000000243 00000 n
+0000014940 00000 n
+0000000326 00000 n
+0000000488 00000 n
+0000001015 00000 n
+0000001038 00000 n
+0000001201 00000 n
+0000008055 00000 n
+0000008080 00000 n
+0000008244 00000 n
+0000014915 00000 n
+0000015016 00000 n
+trailer
+<</Size 16 /Root 15 0 R>>
+startxref
+15069 
+%%EOF5 0 obj<</Count 4/Kids[6 0 R 9 0 R 12 0 R 18 0 R]/Type/Pages>>endobj15 0 obj<</Metadata 17 0 R/Pages 5 0 R/Type/Catalog>>endobj16 0 obj<</BaseFont/Courier/Subtype/Type1/Type/Font>>endobj17 0 obj<</Length 2988/Subtype/XML/Type/Metadata>>stream
+<?xpacket begin="ï»¿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.4-c006 80.159825, 2016/09/16-03:31:08        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+            xmlns:dc="http://purl.org/dc/elements/1.1/"
+            xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/">
+         <xmp:ModifyDate>2025-05-05T18:45:10-05:00</xmp:ModifyDate>
+         <xmp:CreateDate>2025-05-05T18:45:10-05:00</xmp:CreateDate>
+         <xmp:MetadataDate>2025-05-05T18:45:10-05:00</xmp:MetadataDate>
+         <dc:format>application/pdf</dc:format>
+         <xmpMM:DocumentID>uuid:fd528423-7d36-4a60-870f-285ec6429456</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:1c1d3a4e-1e17-4bfa-a3f3-a9716cf40123</xmpMM:InstanceID>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?>
+endstreamendobj18 0 obj<</Contents 19 0 R/MediaBox[0 0 612 792]/Parent 5 0 R/Resources<</Font<</F0 16 0 R/F1 20 0 R/F2 21 0 R/F3 22 0 R>>>>/Type/Page>>endobj19 0 obj<</Length 994>>stream
+BT
+0 0 Td 
+/F0 12 Tf 100 Tz 18 760.836 Td
+(STEP in 4826 hides 634 ) Tj 
+0 -12 Td
+(0 : 1 E1->R1 0 Null Frustrated) Tj 
+0 -12 Td
+(1 : 1 E1->R1 1 R1 SelfSatisfied) Tj 
+0 -12 Td
+(2 : 1 E1->R1 2 R1 Bored) Tj 
+0 -12 Td
+(3 : 2 E2->R2 0 Null Frustrated) Tj 
+0 -12 Td
+(4 : 2 E2->R2 1 R2 SelfSatisfied) Tj 
+0 -12 Td
+(5 : 2 E2->R2 2 R2 Bored) Tj 
+0 -12 Td
+(6 : 1 E1->R1 1 R1 SelfSatisfied) Tj 
+0 -12 Td
+(7 : 1 E1->R1 2 R1 Bored) Tj 
+0 -12 Td
+(8 : 2 E2->R2 1 R2 SelfSatisfied) Tj 
+0 -12 Td
+(9 : 2 E2->R2 2 R2 Bored) Tj 
+0 -12 Td
+(10 : 1 E1->R1 1 R1 SelfSatisfied) Tj 
+0 -12 Td
+(11 : 1 E1->R1 2 R1 Bored) Tj 
+0 -12 Td
+(12 : 2 E2->R2 1 R2 SelfSatisfied) Tj 
+0 -12 Td
+(13 : 2 E2->R2 2 R2 Bored) Tj 
+0 -12 Td
+(14 : 1 E1->R1 1 R1 SelfSatisfied) Tj 
+0 -12 Td
+(15 : 1 E1->R1 2 R1 Bored) Tj 
+0 -12 Td
+(16 : 2 E2->R2 1 R2 SelfSatisfied) Tj 
+0 -12 Td
+(17 : 2 E2->R2 2 R2 Bored) Tj 
+0 -12 Td
+(18 : 1 E1->R1 1 R1 SelfSatisfied) Tj 
+0 -12 Td
+(19 : 1 E1->R1 2 R1 Bored) Tj 
+ET
+endstreamendobj20 0 obj<</BaseFont/Courier-Bold/Subtype/Type1/Type/Font>>endobj21 0 obj<</BaseFont/Courier-Oblique/Subtype/Type1/Type/Font>>endobj22 0 obj<</BaseFont/Courier-BoldOblique/Subtype/Type1/Type/Font>>endobj23 0 obj<</CreationDate(D:20250505184510-05'00')/ModDate(D:20250505184510-05'00')>>endobjxref
+0 1
+0000000000 65535 f
+5 1
+0000015461 00000 n
+15 9
+0000015532 00000 n
+0000015594 00000 n
+0000015656 00000 n
+0000018722 00000 n
+0000018867 00000 n
+0000019912 00000 n
+0000019979 00000 n
+0000020049 00000 n
+0000020123 00000 n
+trailer
+<</Size 24/Root 15 0 R/Info 23 0 R/ID[<6F14E41439EBA140B3D1D88C03B44410><6F14E41439EBA140B3D1D88C03B44410>]/Prev 15069>>
+startxref
+20215
+%%EOF
