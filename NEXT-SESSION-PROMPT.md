@@ -29,8 +29,9 @@ Please continue from commit `4b6c4ea`.
 4. Keep Brodie-style comment usage correct.
 5. Do not broaden the scope without explaining why.
 
-## Open detail
+## Open details
 
-`henry-face-motors-4800.src` still deserves a strict block-format audit
+* `henry-face-motors-4800.src` still deserves a strict block-format audit
 against the current refactor, because the `.fth` file changed after the
 earlier list-generation work.
+* Ensure that the difference in code between a single and double space is included in the method.
