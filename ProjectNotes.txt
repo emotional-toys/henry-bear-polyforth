@@ -6,4 +6,6 @@ Henry-toys evolutions
     1330: Next step is to reproduce the collaborative session so that VOL06 can be proofed.
 12.04.2026
     1758: Here will begin the push into code production.
+11.06.2026
+    1819: Moving this project to current development.
     
