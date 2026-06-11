@@ -16,6 +16,29 @@ The block source follows the `IDEAL Simplified` style:
 - compact definitions
 - sparse comments in source
 
+## Comment delimiter detail
+
+One transformation detail was initially missed and then corrected:
+
+- parenthetical comments must not include a space before `)`
+
+Correct:
+
+```forth
+( Henry Face Basics)
+( N --)
+```
+
+Not correct for this style:
+
+```forth
+( Henry Face Basics )
+( N -- )
+```
+
+This follows the local reading of Brodie and matches the
+`IDEAL Simplified` source form.
+
 ## What is confirmed
 
 - Volatco / GA144 drives the parallel data bus through node `10007`.

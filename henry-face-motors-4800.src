@@ -1,4 +1,4 @@
-( Henry Face Load Block )
+( Henry Face Load Block)
 4801 4808 THRU
 
 
@@ -14,7 +14,7 @@
 
 
 
-( Henry Face Basics )
+( Henry Face Basics)
 DECIMAL
 250 VARIABLE BLINK-RATE-MS
 250 VARIABLE BLINK-DELAY-MS
@@ -30,7 +30,7 @@ DECIMAL
 
 
 
-( Henry Face Bits )
+( Henry Face Bits)
 : BIT-MASK ( N -- U ) 1 SWAP LSHIFT ;
 : BIT-SET ( U N -- U' ) BIT-MASK OR ;
 : BIT-CLEAR ( U N -- U' ) BIT-MASK INVERT AND ;
@@ -46,7 +46,7 @@ DECIMAL
 5 CONSTANT EYES-PWM-BIT
 6 CONSTANT MOUTH-PWM-BIT
 -1 CONSTANT USE-SOFTWARE-PWM
-( Henry Face PWM )
+( Henry Face PWM)
 : TB6612-STBY-ON ( -- ) STBY-BIT FACE-SET-BIT ;
 : TB6612-STBY-OFF ( -- ) STBY-BIT FACE-CLEAR-BIT ;
 : EYES-PWM-ON ( -- )
@@ -62,7 +62,7 @@ DECIMAL
   MOUTH-PWM-BIT FACE-SET-BIT
 ;
 
-( Henry Face Pins )
+( Henry Face Pins)
 : MOUTH-PWM-OFF ( -- ) USE-SOFTWARE-PWM 0< IF EXIT THEN
   MOUTH-PWM-BIT FACE-CLEAR-BIT ;
 : EYES-IN1-HIGH ( -- ) EYES-IN1-BIT FACE-SET-BIT ;
@@ -78,7 +78,7 @@ DECIMAL
 
 
 
-( Henry Face Drive )
+( Henry Face Drive)
 : EYES-COAST ( -- ) EYES-IN1-LOW EYES-IN2-LOW EYES-PWM-OFF ;
 : MOUTH-COAST ( -- )
   MOUTH-IN1-LOW MOUTH-IN2-LOW MOUTH-PWM-OFF
@@ -94,7 +94,7 @@ DECIMAL
   TB6612-STBY-ON MOUTH-PWM-ON MOUTH-IN1-HIGH MOUTH-IN2-LOW
 ;
 
-( Henry Face Actions )
+( Henry Face Actions)
 : MOUTH-CLOSE-DRIVE ( -- )
   TB6612-STBY-ON MOUTH-PWM-ON MOUTH-IN1-LOW MOUTH-IN2-HIGH
 ;
@@ -110,7 +110,7 @@ DECIMAL
 : MOUTH-CLOSE ( -- )
   MOUTH-CLOSE-DRIVE MOUTH-RATE-MS @ MS-WAIT FACE-DRIVE-IDLE
 ;
-( Henry Face Cycles )
+( Henry Face Cycles)
 : BLINK-ONCE ( -- )
   EYES-CLOSE BLINK-DELAY-MS @ MS-WAIT
   EYES-OPEN BLINK-DELAY-MS @ MS-WAIT
@@ -126,12 +126,11 @@ DECIMAL
 
 
 
-( Henry Face Tests )
+( Henry Face Tests)
 : BLINK ( N -- ) CLAMP0 0 ?DO BLINK-ONCE LOOP ;
 : MOUTH ( N -- ) CLAMP0 0 ?DO MOUTH-ONCE LOOP ;
 : FACE-OFF ( -- ) 0 FACE-BUS! ;
 : TEST-BIT ( N -- ) FACE-OFF TB6612-STBY-ON FACE-SET-BIT ;
-
 
 
 

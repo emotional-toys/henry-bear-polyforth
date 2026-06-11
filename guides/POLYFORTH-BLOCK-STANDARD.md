@@ -71,6 +71,27 @@ For Henry-style work:
 
 Keep the title short.
 
+Comment syntax detail:
+
+- `(` must be separated as a word
+- `)` is only the delimiter and should not be preceded by a space
+
+Preferred:
+
+```forth
+( Stream of Intelligence)
+( Face Bus State)
+( N --)
+```
+
+Avoid:
+
+```forth
+( Stream of Intelligence )
+( Face Bus State )
+( N -- )
+```
+
 ## 4. Load blocks stay compact
 
 Prefer a load block that names the block range clearly.
